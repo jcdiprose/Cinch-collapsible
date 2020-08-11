@@ -1,0 +1,35 @@
+{
+  "name": "collapsible",
+  "version": "1.0.0",
+  "description": "A simple lightweight react accordian component",
+  "main": "./src/Collapsible/index.tsx",
+  "scripts": {
+    "dev": "webpack-dev-server -d --config ./webpack.config.js",
+    "build": "webpack -p --config ./webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "devDependencies": {
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
+    "@types/uniqid": "^5.2.0",
+    "css-loader": "^3.6.0",
+    "html-webpack-plugin": "^4.3.0",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.2",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^8.0.1",
+    "tslint": "^6.1.2",
+    "tslint-loader": "^3.5.4",
+    "typescript": "^3.9.7",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "uniqid": "^5.2.0"
+  }
+}

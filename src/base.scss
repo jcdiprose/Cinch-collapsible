@@ -1,0 +1,33 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#collapse {
+  width: 65%;
+  height: 100vh;
+  margin: 0 auto;
+  border-right: 1px solid #d3d3d3;
+  border-left: 1px solid #d3d3d3;
+  // overflow: hidden;
+}
+
+.jsx-header-example {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  background-color: rgb(137, 175, 137);
+  color: #f2f2f2;
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  svg {
+    margin-left: 0.75em;
+
+    path {
+      color: #f2f2f2;
+    }
+  }
+}
