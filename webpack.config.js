@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
-  entry: "./src/index.tsx",
+  entry: "./src/Collapsible/index.tsx",
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "dist"),

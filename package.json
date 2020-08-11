@@ -1,8 +1,8 @@
 {
-  "name": "collapsible",
-  "version": "1.0.0",
+  "name": "cinch-collapsible",
+  "version": "1.0.1",
   "description": "A simple lightweight react accordian component",
-  "main": "./src/Collapsible/index.tsx",
+  "main": "./dist/index.js",
   "scripts": {
     "dev": "webpack-dev-server -d --config ./webpack.config.js",
     "build": "webpack -p --config ./webpack.config.js"

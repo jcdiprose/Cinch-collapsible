@@ -81,7 +81,7 @@ const Panel: FunctionComponent<PanelProps> = ({
 
   const headerStyles: StylesInterface = {};
 
-  noPadding ? (headerStyles.padding = "0 !important") : null;
+  noPadding ? (headerStyles.padding = "0") : null;
 
   return (
     <>
