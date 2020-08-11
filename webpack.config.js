@@ -2,10 +2,12 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
+  mode: "production",
   entry: "./src/Collapsible/index.tsx",
   output: {
     filename: "index.js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "lib"),
+    libraryTarget: "commonjs2",
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
@@ -29,7 +31,7 @@ const config = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
+  // plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
 };
 
 module.exports = config;
