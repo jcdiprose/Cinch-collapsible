@@ -8,20 +8,11 @@ import uniqid from "uniqid";
 
 import "./Collapsible.scss";
 
-interface ContainerInterface {
+interface CollapsibleInterface {
   accordian?: boolean;
   timeout?: number;
   ease?: "ease" | "inOut" | "in" | "out" | number[];
   delay?: number;
-}
-
-interface PanelExtendedProps {
-  timeout?: number;
-  ease?: "ease" | "inOut" | "in" | "out" | number[];
-  delay?: number;
-  activePanel?: string;
-  setActivePanel?: (panelId: string) => void;
-  panelId?: string;
 }
 
 const allArePanel = (children: any) => {
@@ -37,7 +28,7 @@ const easeArrayFormat = (array: number[]) => {
   );
 };
 
-const Container: FunctionComponent<ContainerInterface> = ({
+const Collapsible: FunctionComponent<CollapsibleInterface> = ({
   accordian,
   timeout = 350,
   ease = "ease",
@@ -49,9 +40,9 @@ const Container: FunctionComponent<ContainerInterface> = ({
     Array.isArray(children) ? children.map(() => uniqid("panel-")) : [""]
   );
 
-  if (!allArePanel(children)) {
-    throw new Error("Collapsible can only accept <Panel> components");
-  }
+  // if (!allArePanel(children)) {
+  //   throw new Error("Collapsible can only accept <Panel> components");
+  // }
 
   if (Array.isArray(ease) && !easeArrayFormat(ease)) {
     throw new Error(
@@ -96,4 +87,4 @@ const Container: FunctionComponent<ContainerInterface> = ({
   return <div className="cinch cinch-collapsible">{children}</div>;
 };
 
-export default Container;
+export default Collapsible;
