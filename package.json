@@ -7,13 +7,19 @@
     "type": "git",
     "url": "https://github.com/jcdiprose/Cinch-collapsible"
   },
+  "keywords": [
+    "accordian",
+    "collapse",
+    "collapsible",
+    "panel",
+    "react"
+  ],
   "scripts": {
     "dev": "webpack-dev-server -d --config ./webpack.config.js",
     "build": "webpack -p --config ./webpack.config.js"
   },
   "author": "",
   "license": "ISC",
-  "keywords": [],
   "peerDependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

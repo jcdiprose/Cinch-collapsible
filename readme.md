@@ -4,6 +4,11 @@
 
 #### [Demo](https://codesandbox.io/s/autumn-thunder-vd8ic?fontsize=14&hidenavigation=1&theme=dark)
 
+#### Coming in v2.0.0 release
+
+- onChange listener
+- className prop
+
 #### V1.0.0 release has the following properties
 
 #### Collapsible
