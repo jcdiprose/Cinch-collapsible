@@ -15,7 +15,7 @@
     "react"
   ],
   "scripts": {
-    "dev": "webpack-dev-server -d --config ./webpack.config.js",
+    "dev": "webpack-dev-server -d --config ./webpack.dev.config.js",
     "build": "webpack -p --config ./webpack.config.js"
   },
   "author": "",
