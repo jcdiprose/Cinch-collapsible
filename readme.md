@@ -1,15 +1,17 @@
 # Cinch-Collapse
 
-### Cinch Collapse is a minimally styled React collapse / accordian component. It was been developed so that with minimum effort you can style it to suit your project. It is written in Typescript and can be dropped into your project in seconds
+### Cinch Collapse is a minimally styled React collapse and accordian component. It was been developed so that with the least effort you can style it to suit your project.
 
 #### [Demo](https://codesandbox.io/s/autumn-thunder-vd8ic?fontsize=14&hidenavigation=1&theme=dark)
 
-#### Coming in v2.0.0 release
+#### v2.0.0 released
+
+**latest updates**
 
 - onChange listener
 - className prop
 
-#### V1.0.0 release has the following properties
+**in order to make use of the onChange listener, each panel must have a unique string id**
 
 #### Collapsible
 
@@ -17,8 +19,12 @@
 - timeout?: number;
 - ease?: "ease" | "inOut" | "in" | "out" | number[];
 - delay?: number;
+- className?: string;
+- onChange?: (ids: string) => void;
 
 #### Panel
 
 - header: string | JSX.Element;
 - noPadding?: boolean;
+- id?: string
+- className?: string
