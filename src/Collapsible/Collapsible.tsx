@@ -3,6 +3,7 @@ import React, {
   useState,
   ReactNode,
   ReactElement,
+  useEffect,
 } from "react";
 import uniqid from "uniqid";
 
@@ -13,6 +14,8 @@ interface CollapsibleInterface {
   timeout?: number;
   ease?: "ease" | "inOut" | "in" | "out" | number[];
   delay?: number;
+  onChange?: (panel: string[]) => void;
+  className?: string;
 }
 
 const allArePanel = (children: any) => {
@@ -34,8 +37,11 @@ const Collapsible: FunctionComponent<CollapsibleInterface> = ({
   ease = "ease",
   delay = 0,
   children,
+  onChange,
+  className,
 }) => {
   const [activePanel, setActivePanel] = useState(null);
+  const [activePanelIds, updateActivePanelIds] = useState<string[]>([]);
   const [childIds] = useState<string[]>(
     Array.isArray(children) ? children.map(() => uniqid("panel-")) : [""]
   );
@@ -50,10 +56,27 @@ const Collapsible: FunctionComponent<CollapsibleInterface> = ({
     );
   }
 
+  useEffect(() => onChange && onChange(activePanelIds), [activePanelIds]);
+
+  const setActivePanelIds = (id: string) => {
+    /* @ts-ignore */
+    const shouldRemove = activePanelIds.includes(id);
+
+    if (shouldRemove) {
+      updateActivePanelIds(
+        /* @ts-ignore */
+        activePanelIds.filter((curId: string) => curId !== id)
+      );
+    } else {
+      /* @ts-ignore */
+      updateActivePanelIds(activePanelIds.concat([id]));
+    }
+  };
+
   if (Array.isArray(children) && children[0])
     if (children && Array.isArray(children)) {
       return (
-        <div className="cinch-collapsible">
+        <div className={`cinch-collapsible ${className ? className : ""}`}>
           {children.map((child, i) => {
             if (accordian && React.isValidElement(child)) {
               return (
@@ -61,6 +84,7 @@ const Collapsible: FunctionComponent<CollapsibleInterface> = ({
                   {React.cloneElement(child, {
                     activePanel,
                     setActivePanel,
+                    setActivePanelIds,
                     timeout,
                     ease,
                     delay,
@@ -76,6 +100,7 @@ const Collapsible: FunctionComponent<CollapsibleInterface> = ({
                     timeout,
                     ease,
                     delay,
+                    setActivePanelIds,
                   })}
                 </React.Fragment>
               );

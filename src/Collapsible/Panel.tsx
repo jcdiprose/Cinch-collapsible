@@ -2,13 +2,17 @@ import React, { useState, useEffect, FunctionComponent } from "react";
 
 export interface PanelProps {
   header: string | JSX.Element;
+  id: string;
   timeout?: number;
   ease?: "ease" | "inOut" | "in" | "out" | number[];
   delay?: number;
   activePanel?: string;
   setActivePanel?: (panelId: string) => void;
+  setActivePanelIds?: (panelIds: string) => void;
   panelId?: string;
   noPadding?: boolean;
+  onChange?: (panel: string | number) => void;
+  className?: string;
 }
 
 const Panel: FunctionComponent<PanelProps> = ({
@@ -19,8 +23,12 @@ const Panel: FunctionComponent<PanelProps> = ({
   children,
   activePanel,
   setActivePanel,
+  setActivePanelIds,
   panelId,
   noPadding,
+  id,
+  onChange,
+  className,
 }) => {
   const [showPanel, setShowPanel] = useState(false);
   const [animPanel, toggleAnimOpen] = useState(false);
@@ -38,15 +46,19 @@ const Panel: FunctionComponent<PanelProps> = ({
       toggleAnimOpen(false);
       setTimeout(() => setShowPanel(false), timeout);
     } else {
-      setActivePanel && panelId && setActivePanel(panelId);
+      if (setActivePanel && panelId) {
+        setActivePanel(panelId);
+      }
       setShowPanel(true);
     }
+    setActivePanelIds && setActivePanelIds(id);
   };
 
   useEffect(() => {
     if (panelId !== activePanel) {
       toggleAnimOpen(false);
       setTimeout(() => setShowPanel(false), timeout);
+      if (showPanel && setActivePanelIds) setActivePanelIds(id);
     }
   }, [activePanel]);
 
@@ -86,7 +98,7 @@ const Panel: FunctionComponent<PanelProps> = ({
   return (
     <>
       <div
-        className="cinch-collapsible__header"
+        className={`cinch-collapsible__header ${className ? className : ""}`}
         onClick={triggerOnClick}
         onTouchEnd={triggerPanel}
         style={headerStyles}
@@ -95,7 +107,7 @@ const Panel: FunctionComponent<PanelProps> = ({
       </div>
       {showPanel && (
         <div
-          className="cinch-collapsible__panel"
+          className={`cinch-collapsible__panel ${className ? className : ""}`}
           ref={(ref) => setPanelRef(ref)}
           style={styles}
         >
