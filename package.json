@@ -44,6 +44,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "dotenv-cli": "^4.0.0",
     "uniqid": "^5.2.0"
   },
   "release-it": {
