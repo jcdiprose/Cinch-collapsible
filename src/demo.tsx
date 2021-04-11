@@ -35,6 +35,7 @@ const CollapsibleDemo = () => {
   const [openPanels, setOpenPanels] = React.useState<string[]>([]);
   return (
     <>
+      <h1>With Accordian</h1>
       <Collapsible
         timeout={250}
         ease="ease"
@@ -55,16 +56,19 @@ const CollapsibleDemo = () => {
           </Panel>
         ))}
       </Collapsible>
-      <h1>No Accordian</h1>
-      <Collapsible timeout={250} ease="ease" onChange={(p) => console.log(p)}>
-        <Panel header="String Header - Panel One" id={"1"}>
-          String header, string panel body
+      <h1>Without Accordian</h1>
+      <Collapsible timeout={250} ease="ease" onChange={(id) => console.log(id)}>
+        <Panel header={JsxHeader()} id={"1"}>
+          string panel body
         </Panel>
         <Panel header="String Header - Panel Two" id={"2"}>
-          String header, string panel body
+          string panel body
         </Panel>
-        <Panel header="String Header - Panel Three" id={"3"}>
-          String header, string panel body
+        <Panel header={<h1>Component Header - Panel Three</h1>} id={"3"}>
+          <>
+            <h1>Panel Body Component</h1>
+            <p>Lorem ipsum Delerium</p>
+          </>
         </Panel>
       </Collapsible>
     </>

@@ -2,6 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  font-family: "Courier New", Courier, monospace;
 }
 
 #collapse {
@@ -34,4 +35,10 @@ body {
 
 .Custom-Collapse.cinch-collapsible__header {
   padding: 2em 2em;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
 }

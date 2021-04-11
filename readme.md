@@ -2,11 +2,12 @@
 
 ### Cinch Collapse is a minimally styled React collapse and accordian component. It was been developed so that with the least effort you can style it to suit your project.
 
-#### [Demo](https://codesandbox.io/s/autumn-thunder-vd8ic?fontsize=14&hidenavigation=1&theme=dark)
+#### [Demo](https://codesandbox.io/s/keen-allen-ruxfl?file=/src/styles.css&theme=dark)
 
-#### v2.0.0 released
+**v3.0.0 changes**
+Removed default padding on Panel
 
-**latest updates**
+**v2.0.0 changes**
 
 - onChange listener
 - className prop
