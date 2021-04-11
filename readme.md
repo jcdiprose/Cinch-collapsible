@@ -6,6 +6,7 @@
 
 **v3.0.0 changes**
 Removed default padding on Panel
+Removed react & react-dom from dependencies
 
 **v2.0.0 changes**
 
