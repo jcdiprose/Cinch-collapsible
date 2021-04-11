@@ -17,7 +17,7 @@
   "scripts": {
     "dev": "webpack-dev-server -d --config ./webpack.dev.config.js",
     "build": "webpack -p --config ./webpack.config.js",
-    "release": "release-it"
+    "release": "dotenv release-it"
   },
   "author": "",
   "license": "ISC",
